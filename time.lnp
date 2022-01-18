@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"ChinTime.obj" 
+TO "time" 
+RAMSIZE(256) 

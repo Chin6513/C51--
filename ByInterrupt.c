@@ -1,4 +1,5 @@
 #include<reg52.h>
+#include"timeinit.h"
 #define uint unsigned int
 #define uchar unsigned char
 
@@ -16,8 +17,7 @@ void integer(uint z);	//负责显示整数部分
 void main()
 {
 	TMOD=0x01;
-	TH0=(65536-45872)/256;
-	TL0=(65536-45872)%256;
+	initassign();
 	EA=1;
 	ET0=1;
 	TR0=1;
@@ -50,8 +50,7 @@ void main()
 
 void T0_time()interrupt 1
 {
-	TH0=(65536-45872)/256;
-	TL0=(65536-45872)%256;
+	initassign();
 	num++;
 }
 void delay(uint xms)
